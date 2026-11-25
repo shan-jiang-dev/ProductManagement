@@ -10,9 +10,11 @@ import org.springframework.web.context.request.WebRequest;
 
 import com.example.Product.Entity.ErrorResponse;
 
+//handle exceptions globally across all controllers
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 	
+	// It defines a method that gets executed when a particular exception occurs, allowing you to customize the error response.
 	@ExceptionHandler(ProductNotFoundException.class)
 	public ResponseEntity<ErrorResponse> productNotFoundExceptionHandler(ProductNotFoundException pnfex, WebRequest webRequest) {
 		
